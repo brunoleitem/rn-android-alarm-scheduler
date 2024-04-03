@@ -17,6 +17,14 @@ const RnAndroidAlarmScheduler = NativeModules.RnAndroidAlarmScheduler
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return RnAndroidAlarmScheduler.multiply(a, b);
+export function playAlarm(duration: number): Promise<void> {
+  return RnAndroidAlarmScheduler.playAlarm(duration);
+}
+
+export function scheduleAlarm(interval: number): Promise<void> {
+  return RnAndroidAlarmScheduler.scheduleAlarm(interval);
+}
+
+export function cancelAlarm(): Promise<void> {
+  return RnAndroidAlarmScheduler.cancelAlarms();
 }
